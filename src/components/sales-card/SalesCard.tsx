@@ -2,8 +2,12 @@ import { NotificationButton } from "../notification-button/NotificationButton";
 import "./sales-card.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useState } from "react";
 
 export const SalesCard = () => {
+
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
 
     return (
         <div className="dsmeta-card">
@@ -11,16 +15,16 @@ export const SalesCard = () => {
             <div>
                 <div className="dsmeta-form-control-container">
                     <DatePicker
-                        selected={new Date()}
-                        onChange={(date: Date) => { }}
+                        selected={startDate}
+                        onChange={(date: Date) => {setStartDate(date)}}
                         className="dsmeta-form-control"
                         dateFormat="dd/MM/yyyy"
                     />
                 </div>
                 <div className="dsmeta-form-control-container">
                     <DatePicker
-                        selected={new Date()}
-                        onChange={(date: Date) => { }}
+                        selected={endDate}
+                        onChange={(date: Date) => {setEndDate(date)}}
                         className="dsmeta-form-control"
                         dateFormat="dd/MM/yyyy"
                     />
