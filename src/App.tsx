@@ -1,9 +1,12 @@
-const App = () => {
+import { NotificationButton } from "./components/notification-button/NotificationButton";
+
+export const App = () => {
 
   return(
-    <div>Olá mundo</div>
+    <>
+      <h1>Olá mundo</h1>
+      <NotificationButton/>
+    </>
   );
 
 }
-
-export default App
